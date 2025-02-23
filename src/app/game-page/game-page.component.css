@@ -1,0 +1,32 @@
+.leaderboard {
+    max-width: 50%;
+    min-width: 400px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.user-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 3rem;
+}
+
+.question {
+    display: flex;
+    justify-content: center;
+    color:cyan;
+    padding: 2rem;
+    font-size: 24px;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 1rem;
+    color:cyan;
+    font-size: 24px;
+}

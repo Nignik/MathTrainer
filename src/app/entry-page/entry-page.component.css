@@ -1,0 +1,36 @@
+.title {
+    color:cyan;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 300;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+.ranges {
+    padding-top: 2.0rem;
+}
+
+.question-range {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.gameStart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    padding-top: 7.0rem;
+}
+
+.gameButtons {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}

@@ -1,0 +1,46 @@
+<router-outlet></router-outlet>
+
+<div class="title">
+  <p>Math Trainer</p>
+</div>
+
+<div class="ranges">
+  <div class="question-range">
+    <mat-form-field appearance="outline">
+      <mat-label>Minimum Addition</mat-label>
+      <input matInput type="number" min="1" max="10000" [(ngModel)]="minAddition">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Maximum Addition</mat-label>
+      <input matInput type="number" min="1" max="10000" [(ngModel)]="maxAddition">
+    </mat-form-field>
+  </div>
+  <div class="question-range">
+    <mat-form-field appearance="outline">
+      <mat-label>Minimum Multiplication</mat-label>
+      <input matInput type="number" min="1" max="10000" [(ngModel)]="minMultiplication">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Maximum Multiplication</mat-label>
+      <input matInput type="number" min="1" max="10000" [(ngModel)]="maxMultiplication">
+    </mat-form-field>
+  </div>
+</div>
+
+
+<div class="gameStart">
+  <mat-form-field appearance="outline">
+    <mat-label>Enter your name</mat-label>
+    <input matInput maxlength="15" [(ngModel)]="username">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Enter Game ID</mat-label>
+    <input matInput maxlength="15" #gameID>
+  </mat-form-field>
+</div>
+
+<div class="gameButtons">
+  <button mat-raised-button color="primary" (click)="onJoinGame(gameID.value)">Join Game</button>
+  <button mat-raised-button color="accent" (click)="onCreateGame(gameID.value)">Create Game</button>
+</div>

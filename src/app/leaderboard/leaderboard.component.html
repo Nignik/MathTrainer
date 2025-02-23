@@ -1,0 +1,16 @@
+<div class="container">
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of leaderboard">
+          <td>{{ entry.name }}</td>
+          <td>{{ entry.score }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

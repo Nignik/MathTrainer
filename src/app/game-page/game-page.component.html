@@ -1,0 +1,42 @@
+<router-outlet></router-outlet>
+
+<div class="score">
+    <p>score: {{score}}</p>
+</div>
+
+<div class="question">
+    <p>{{question}}</p>
+</div>
+  
+<div class="user-input">
+    <mat-form-field appearance="outline">
+        <mat-label>Answer</mat-label>
+        <input matInput type="number" min="-1000000000" max="1000000000" [(ngModel)]="this.userInput" (ngModelChange)="this.socket.submitAnswer($event)">
+    </mat-form-field>
+</div>
+
+<div class="leaderboard">
+    <table mat-table [dataSource]="leaderboard" appearance="outline" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+        </ng-container>
+        
+        <ng-container matColumnDef="score">
+            <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.score}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="playTime">
+            <mat-header-cell *matHeaderCellDef> Time </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{formatTime(element.playTime)}} </mat-cell>
+        </ng-container>
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+        showFirstLastButtons
+        aria-label="Select page of periodic elements">
+    </mat-paginator>
+</div>
